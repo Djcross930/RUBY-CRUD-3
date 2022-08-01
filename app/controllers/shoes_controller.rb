@@ -29,6 +29,13 @@ class ShoesController < ApplicationController
     render json: shoe
   end
 
+  def destroy
+    shoe = Shoe.find_by(id: params[:id])
+    shoe.destroy
+    render json: Shoe.all
+  end
+
+
 
 
 
