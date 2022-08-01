@@ -19,5 +19,17 @@ class ShoesController < ApplicationController
     render json: shoe
   end
 
+  def update
+    shoe = Shoe.find_by(id: params[:id])
+    shoe.brand = params[:brand] || shoe.brand
+    shoe.color = params[:color] || shoe.color
+    shoe.model = params[:model] || shoe.model
+    shoe.style = params[:style] || shoe.style
+    shoe.save
+    render json: shoe
+  end
+
+
+
 
 end

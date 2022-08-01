@@ -16,3 +16,15 @@ Content-Type: application/json
   "style": "Gym Shoes"
 
 }
+
+###
+
+PATCH http://localhost:3000/shoes/2
+Content-Type: application/json
+
+{
+  "model": "Air Force Ones"
+}
+
+###
+DELETE http://localhost:3000/shoes/2
