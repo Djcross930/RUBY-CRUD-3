@@ -1,12 +1,12 @@
 class ShoesController < ApplicationController
   def index
     shoes = Shoe.all
-    render json: shoes
+    render json: shoes.as_json
   end
   
   def show
     shoe = Shoe.find_by(id: params[:id])
-    render json: shoe
+    render json: shoe.as_json
   end
 
   def create
@@ -16,7 +16,7 @@ class ShoesController < ApplicationController
     shoe.model = params[:model]
     shoe.style = params[:style]
     shoe.save
-    render json: shoe
+    render json: shoe.as_json
   end
 
   def update
@@ -32,7 +32,7 @@ class ShoesController < ApplicationController
       model: params[:model] || shoe.model,
       style: params[:style] || shoe.style
     )
-    render json: shoe
+    render json: shoe.as_json
   end
 
   def destroy
@@ -40,5 +40,5 @@ class ShoesController < ApplicationController
     shoe.destroy
     render json: Shoe.all
   end
-  
+
 end
