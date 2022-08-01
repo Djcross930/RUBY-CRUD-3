@@ -40,9 +40,5 @@ class ShoesController < ApplicationController
     shoe.destroy
     render json: Shoe.all
   end
-
-
-
-
-
+  
 end
